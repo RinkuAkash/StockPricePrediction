@@ -115,6 +115,7 @@
                 // Add the Point
                 // Time PredictedData\
                 var data1 = [];
+
                 data1.push(result[0]);
                 data1.push(result[1]);
 
@@ -129,10 +130,10 @@
                 chartPredictedData.series[0].addPoint(data1, true, shiftPredictedData);
                 chartActualData.series[0].addPoint(data2, true, shiftActualData);
                 $(".sensor1").text("");
-                $(".sensor1").text("Predicted : " +  Math.round(data1[1]) );
+                $(".sensor1").text("Predicted : " +  data1[1] );
 
                 $(".sensor2").text("");
-                $(".sensor2").text("Actual : " +  Math.round(data2[1]) );
+                $(".sensor2").text("Actual : " +  data2[1] );
 
                 // call it again after one second
                 setTimeout(requestData, 2000);
@@ -158,10 +159,14 @@
                     },
                 xAxis: {
                     type: 'datetime',
-                    tickPixelInterval: 400,
+                    labels:{
+                        format: '{value:%e-%m-%y %H:%M:%S}'
+                            },
+                    tickPixelInterval: 150,
                     maxZoom: 20 * 1000
                         },
                 yAxis: {
+                    lineWidth: 1,
                     minPadding: 0.2,
                     maxPadding: 0.2,
                     title: {
@@ -193,12 +198,16 @@
                     },
                 xAxis: {
                     type: 'datetime',
+                    labels:{
+                        format: '{value:%e-%m-%y %H:%M:%S}'
+                            },
                     tickPixelInterval: 150,
                     maxZoom: 20 * 1000
                 },
                 yAxis: {
                     minPadding: 0.2,
                     maxPadding: 0.2,
+                    maxZoom: 20,
                     title: {
                         text: 'Value',
                         margin: 20
@@ -206,7 +215,7 @@
                 },
                 series: [{
                     lineColor: '#1d82b8',
-                    name: 'Actual',
+                    name: 'Actual Price',
                     data: []
                 }]
             });
