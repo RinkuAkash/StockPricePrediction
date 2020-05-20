@@ -6,7 +6,7 @@ jsonschema==2.6.0
 jupyter-client==5.2.2
 jupyter-core==4.4.0
 kafka-python==2.0.1
-notebook==5.2.2
+notebook==5.7.8
 numpy==1.18.3
 pandas==1.0.3
 pyspark==2.4.5
