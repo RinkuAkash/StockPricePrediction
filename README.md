@@ -68,7 +68,7 @@ export PYSPARK_DRIVER_PYTHON=python3
    sudo apt-get install git
    ```
    - Clone the project
-   - Intall pip 
+   - Install pip 
    ```bash
    sudo apt-get install python3-pip
    ```
